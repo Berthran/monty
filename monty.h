@@ -4,6 +4,13 @@
 #ifndef MONTY_H
 #define MONTY_H
 
+/* Include header files */
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <fcntl.h>
+
 /* Data structures for stack and queue implementation */
 
 /**
@@ -45,5 +52,16 @@ typedef struct instruction_s
 	char *opcode; /* push pop dequeue enqueue */
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
+
+/* Handle instruction line with no arguments */
+int is_newline(char *inst_line);
+int is_emptyspaces(char *inst_line);
+
+/* Functions to handle printing error messages */
+void print_errmsg_argfail(void);
+void print_errmsg_openfail(char *argv[]);
+void print_errmsg_instfail(char *opcode, int line_n);
+void print_errmsg_mallocfail(void);
 
 #endif
