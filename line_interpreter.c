@@ -32,7 +32,9 @@ int lineInterpreter(stack_t **stack, char *line, int line_number)
 		if (get_func(opcode) == NULL)
 		{
 			fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
-			return (-1);
+			free_stack_t(stack);
+			fclose(file);
+			exit(EXIT_FAILURE);
 		}
 		get_func(opcode)(stack, line_number);
 	}

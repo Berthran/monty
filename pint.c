@@ -3,7 +3,7 @@
 #include "monty.h"
 
 /**
- * pall - prints the element at the top of the stack
+ * pint - prints the element at the top of the stack
  * @stack: the stack data structure to print
  * @line_number: the line number of the instruction in the MBCF
  *
