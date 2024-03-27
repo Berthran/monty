@@ -13,7 +13,7 @@ void free_stack_t(stack_t **stack)
 {
 	stack_t *temp;
 
-	if (stack != NULL)
+	if (stack != NULL && *stack != NULL)
 	{
 		while ((*stack)->next != NULL)
 		{
