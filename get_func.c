@@ -13,6 +13,7 @@ void (*get_func(char *opcode))(stack_t **, unsigned int)
 	instruction_t op_func[] = {
 		{"pall", pall},
 		{"pint", pint},
+		{"pop", pop},
 		{NULL, NULL}};
 	size_t opcode_len, i = 0;
 	char *valid_opcode = op_func[i].opcode;
