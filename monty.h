@@ -92,6 +92,12 @@ void swap(stack_t **stack, unsigned int line_number);
 /* Add the top two elements of a stack */
 void add(stack_t **stack, unsigned int line_number);
 
+/* Subtract the top two elements of a stack */
+void sub(stack_t **stack, unsigned int line_number);
+
+/* Divide the top two elements of a stack */
+void _div(stack_t **stack, unsigned int line_number);
+
 /* Clean up stack */
 void free_stack_t(stack_t **stack);
 #endif
