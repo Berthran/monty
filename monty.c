@@ -2,6 +2,8 @@
 
 #include "monty.h"
 
+FILE *file;
+
 /**
  * main - the entry point to the interpreter
  * @ac: the number of arguments passed to main
@@ -12,10 +14,8 @@
 int main(int ac, char *argv[])
 {
 	char line[2048];
-	FILE *file;
 	int line_number = 1;
 	stack_t *stack = NULL;
-	/*char *opcode;*/
 
 	/* Check the number of arguments passed to main */
 	if (ac != 2)
@@ -29,11 +29,7 @@ int main(int ac, char *argv[])
 	/* Get instruction line by line */
 	while (fgets(line, sizeof(line), file) != NULL)
 	{
-		if (lineInterpreter(&stack, line, line_number) != 0)
-		{
-			fclose(file);
-			exit(EXIT_FAILURE);
-		}
+		lineInterpreter(&stack, line, line_number);
 		++line_number;
 	}
 	fclose(file);

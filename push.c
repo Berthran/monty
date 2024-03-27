@@ -11,7 +11,7 @@
  * Return: nothing
  */
 
-int push(stack_t **stack, char *val, int line_number)
+void push(stack_t **stack, char *val, int line_number)
 {
 	stack_t *new_block = NULL;
 
@@ -20,7 +20,8 @@ int push(stack_t **stack, char *val, int line_number)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		free_stack_t(stack);
-		return (-1);
+		fclose(file);
+		exit(EXIT_FAILURE);
 	}
 	if (stack != NULL)
 	{
@@ -42,5 +43,4 @@ int push(stack_t **stack, char *val, int line_number)
 		/* Move stack to the top */
 		*stack = new_block;
 	}
-	return (0);
 }

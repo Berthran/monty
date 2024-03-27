@@ -12,16 +12,17 @@ void (*get_func(char *opcode))(stack_t **, unsigned int)
 {
 	instruction_t op_func[] = {
 		{"pall", pall},
+		{"pint", pint},
 		{NULL, NULL}};
 	size_t opcode_len, i = 0;
-	char *valid_opcode = NULL;
+	char *valid_opcode = op_func[i].opcode;
 
 	do {
-		valid_opcode = op_func[i].opcode;
 		opcode_len = strlen(valid_opcode);
 		if (strncmp(valid_opcode, opcode, opcode_len) == 0)
 			return (op_func[i].f);
 		++i;
+		valid_opcode = op_func[i].opcode;
 	} while (valid_opcode != NULL);
 	return (NULL);
 }

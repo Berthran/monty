@@ -2,6 +2,7 @@
 
 #include "monty.h"
 
+
 /**
  * lineInterpreter - interpretes a line to determine its operation
  * @stack: the stack data structure
@@ -23,8 +24,7 @@ int lineInterpreter(stack_t **stack, char *line, int line_number)
 	if (strcmp(opcode, "push") == 0)
 	{
 		val = strtok(NULL, " ");
-		if (push(stack, val, line_number) == -1)
-			return (-1);
+		push(stack, val, line_number);
 	}
 	/* Handle other opcodes */
 	else
