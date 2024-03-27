@@ -21,6 +21,10 @@ int lineInterpreter(stack_t **stack, char *line, int line_number)
 
 	opcode = get_opcode(line);
 
+	/* Handle the nop opcode */
+	if (strcmp(opcode, "nop") == 0)
+		return (0);
+
 	/* Handle the push opcode */
 	if (strcmp(opcode, "push") == 0)
 	{
@@ -39,8 +43,7 @@ int lineInterpreter(stack_t **stack, char *line, int line_number)
 		else
 			get_func(opcode)(stack, line_number);
 	}
-
-	printf("L%d: %s successful", line_number, opcode);
-	printf("\n");
+	/* printf("L%d: %s successful", line_number, opcode); */
+	/* printf("\n"); */
 	return (0);
 }
