@@ -48,6 +48,9 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/* File pointer */
+extern FILE *file;
+
 /* Interprete the instruction line */
 int lineInterpreter(stack_t **stack, char *line, int line_number);
 void (*get_func(char *opcode))(stack_t **, unsigned int);
@@ -68,11 +71,14 @@ void print_errmsg_mallocfail(void);
 char *get_opcode(char *inst_line);
 
 /* Push to Stack */
-int push(stack_t **stack, char *val, int line_number);
+void push(stack_t **stack, char *val, int line_number);
 void push_to_stack(stack_t **stack, int val);
 
 /* Print the Stack */
 void pall(stack_t **stack, unsigned int line_number);
+
+/* Print the top of the stack */
+void pint(stack_t **stack, unsigned int line_number);
 
 /* Clean up stack */
 void free_stack_t(stack_t **stack);
