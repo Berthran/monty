@@ -48,7 +48,7 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-/* File pointer */
+/* Global declaration of file pointer */
 extern FILE *file;
 
 /* Interprete the instruction line */
@@ -79,6 +79,9 @@ void pall(stack_t **stack, unsigned int line_number);
 
 /* Print the top of the stack */
 void pint(stack_t **stack, unsigned int line_number);
+
+/* Remove the top of the stack */
+void pop(stack_t **stack, unsigned int line_number);
 
 /* Clean up stack */
 void free_stack_t(stack_t **stack);
