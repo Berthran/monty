@@ -20,26 +20,27 @@ int lineInterpreter(stack_t **stack, char *line, int line_number)
 		return (0);
 
 	opcode = get_opcode(line);
+
 	/* Handle the push opcode */
 	if (strcmp(opcode, "push") == 0)
 	{
 		val = strtok(NULL, " ");
-		push(stack, val, line_number);
+		if (val == NULL || (atoi(val) == 0 && *val != '0'))
+			print_errmsg_pushfail(stack, line_number);
+		else
+			push(stack, atoi(val));
 	}
+
 	/* Handle other opcodes */
 	else
 	{
 		if (get_func(opcode) == NULL)
-		{
-			fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
-			free_stack_t(stack);
-			fclose(file);
-			exit(EXIT_FAILURE);
-		}
-		get_func(opcode)(stack, line_number);
+			print_errmsg_opcodefail(stack, line_number, opcode);
+		else
+			get_func(opcode)(stack, line_number);
 	}
 
-	printf("L%d: %s", line_number, opcode);
+	printf("L%d: %s successful", line_number, opcode);
 	printf("\n");
 	return (0);
 }
