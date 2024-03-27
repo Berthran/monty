@@ -66,12 +66,15 @@ void print_errmsg_openfail(char *argv[]);
 void print_errmsg_instfail(char *opcode, int line_n);
 void print_errmsg_mallocfail(void);
 
+void print_errmsg_pushfail(stack_t **stack, int line_number);
+void print_errmsg_opcodefail(stack_t **stack, int line_number, char *opcode);
+
 
 /* Handle instruction line with arguments */
 char *get_opcode(char *inst_line);
 
 /* Push to Stack */
-void push(stack_t **stack, char *val, int line_number);
+void push(stack_t **stack, int val);
 void push_to_stack(stack_t **stack, int val);
 
 /* Print the Stack */
@@ -82,6 +85,12 @@ void pint(stack_t **stack, unsigned int line_number);
 
 /* Remove the top of the stack */
 void pop(stack_t **stack, unsigned int line_number);
+
+/* Swap the top two elements of a stack */
+void swap(stack_t **stack, unsigned int line_number);
+
+/* Add the top two elements of a stack */
+void add(stack_t **stack, unsigned int line_number);
 
 /* Clean up stack */
 void free_stack_t(stack_t **stack);
