@@ -3,7 +3,7 @@
 #include "monty.h"
 
 /**
- * print_error_argfail - prints an error message for wrong arguments
+ * print_errmsg_argfail - prints an error message for wrong arguments
  *
  * Return: nothing
  */
@@ -28,7 +28,7 @@ void print_errmsg_openfail(char *argv[])
 
 /**
  * print_errmsg_instfail - prints an error message for an invalid instruction
- * @opcode: the invalid opcode 
+ * @opcode: the invalid opcode
  * @line_n: line number of the invalid instruction
  *
  * Return: nothing
