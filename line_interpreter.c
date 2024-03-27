@@ -25,6 +25,10 @@ int lineInterpreter(stack_t **stack, char *line, int line_number)
 	if (strcmp(opcode, "nop") == 0)
 		return (0);
 
+	/* Handle comment */
+	if (strncmp(opcode, "#", 1) == 0)
+		return (0);
+
 	/* Handle the push opcode */
 	if (strcmp(opcode, "push") == 0)
 	{
