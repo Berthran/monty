@@ -26,8 +26,8 @@ int main(int ac, char *argv[])
 
 	/* Open the file for reading */
 	file = fopen(argv[1], "r");
-	if (file == NULL)
-		print_errmsg_openfail(argv);
+	/* if (file == NULL) */
+	/*	print_errmsg_openfail(argv); */
 
 	/* Get instruction line by line */
 	/* while (getline(&line, &n, file) != -1)*/
