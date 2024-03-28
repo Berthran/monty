@@ -26,7 +26,7 @@ int lineInterpreter(stack_t **stack, char *line, int line_number)
 		return (0);
 
 	/* Handle comment */
-	if (strncmp(opcode, "#", 1) == 0)
+	if (strncmp(opcode, "$", 1) == 0)
 		return (0);
 
 	/* Handle the push opcode */
