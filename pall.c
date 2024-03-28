@@ -23,6 +23,5 @@ void pall(stack_t **stack, unsigned int line_number)
 			printf("%d\n", crawler->n);
 			crawler = crawler->next;
 		}
-		printf("pall\n");
 	}
 }
