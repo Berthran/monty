@@ -22,7 +22,7 @@ int lineInterpreter(stack_t **stack, char *line, int line_number)
 	opcode = get_opcode(line);
 
 	/* Handle the nop opcode */
-	if (strcmp(opcode, "nop") == 0)
+	if (strcmp(opcode, "nope") == 0)
 		return (0);
 
 	/* Handle comment */
