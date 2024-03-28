@@ -51,9 +51,3 @@ int lineInterpreter(stack_t **stack, char *line, int line_number)
 	/* printf("\n"); */
 	return (0);
 }
-
-
-/**
- * create_block - creates a new block for a stack
- * @block: the address of the block
- * @val: the value of the 
