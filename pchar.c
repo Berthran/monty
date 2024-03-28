@@ -22,7 +22,7 @@ void pchar(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	val = (*stack)->n;
-	if (val >= 32 && val <= 126)
+	if (val >= 0 && val <= 127)
 		printf("%c\n", val);
 	else
 		fprintf(stderr, "L%d: can't pchar, value out of range\n", line_number);
