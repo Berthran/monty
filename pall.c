@@ -24,5 +24,4 @@ void pall(stack_t **stack, unsigned int line_number)
 			crawler = crawler->next;
 		}
 	}
-	printf("fail pall\n");
 }
