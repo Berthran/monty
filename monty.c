@@ -13,7 +13,9 @@ FILE *file;
  */
 int main(int ac, char *argv[])
 {
-	char line[2048];
+	/*char line[2048];*/
+	char *line = NULL;
+	size_t n = 0;
 	int line_number = 1;
 	stack_t *stack = NULL;
 
@@ -27,11 +29,13 @@ int main(int ac, char *argv[])
 		print_errmsg_openfail(argv);
 
 	/* Get instruction line by line */
-	while (fgets(line, sizeof(line), file) != NULL)
+	/*while (fgets(line, sizeof(line), file) != NULL)*/
+	while (getline(&line, &n, file) != -1)
 	{
 		lineInterpreter(&stack, line, line_number);
 		++line_number;
 	}
 	fclose(file);
+	free(line);
 	exit(EXIT_SUCCESS);
 }
