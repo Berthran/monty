@@ -13,6 +13,7 @@
 void print_errmsg_pushfail(stack_t **stack, int line_number)
 {
 	fprintf(stderr, "L%d: usage: push integer\n", line_number);
+	printf("fail push\n");
 	free_stack_t(stack);
 	fclose(file);
 	exit(EXIT_FAILURE);
