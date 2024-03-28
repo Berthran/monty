@@ -13,7 +13,8 @@ FILE *file;
  */
 int main(int ac, char *argv[])
 {
-	char line[2048];
+
+	char line[INT_MAX];
 	/* char *line = NULL; */
 	/* size_t n = 0; */
 	int line_number = 1;

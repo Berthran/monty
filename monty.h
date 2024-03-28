@@ -9,6 +9,7 @@
 #include <strings.h>
 #include <unistd.h>
 #include <fcntl.h>
+#include <limits.h>
 
 /* Data structures for stack and queue implementation */
 

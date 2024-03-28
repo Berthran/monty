@@ -26,13 +26,12 @@ int lineInterpreter(stack_t **stack, char *line, int line_number)
 		return (0);
 
 	/* Handle comment */
-	if (strncmp(opcode, "$", 1) == 0)
+	if (strncmp(opcode, "#", 1) == 0)
 		return (0);
 
 	/* Handle the push opcode */
 	if (strcmp(opcode, "push") == 0)
 	{
-		return (0);
 		val = strtok(NULL, " ");
 		if (val == NULL || (atoi(val) == 0 && *val != '0'))
 			print_errmsg_pushfail(stack, line_number);
