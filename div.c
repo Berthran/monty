@@ -3,7 +3,7 @@
 #include "monty.h"
 
 /**
- * div - subtracts the top two elements of the stack
+ * _div - subtracts the top two elements of the stack
  * @stack: the stack data structure to print
  * @line_number: the line number of the instruction in the MBCF
  *
