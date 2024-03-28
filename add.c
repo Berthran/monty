@@ -33,4 +33,5 @@ void add(stack_t **stack, unsigned int line_number)
 		fclose(file);
 		exit(EXIT_FAILURE);
 	}
+	printf("div fails\n");
 }

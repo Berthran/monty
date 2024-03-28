@@ -44,4 +44,5 @@ void _div(stack_t **stack, unsigned int line_number)
 			pop(stack, line_number);
 		}
 	}
+	printf("div fails\n");
 }
