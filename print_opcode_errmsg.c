@@ -15,6 +15,7 @@ void print_errmsg_pushfail(stack_t **stack, int line_number)
 	dprintf(STDERR_FILENO, "L%d: usage: push integer\n", line_number);
 	free_stack_t(stack);
 	fclose(file);
+	printf("opcode error\n");
 	exit(EXIT_FAILURE);
 }
 
