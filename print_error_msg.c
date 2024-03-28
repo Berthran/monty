@@ -10,7 +10,7 @@
 
 void print_errmsg_argfail(void)
 {
-	fprintf(stderr, "USAGE: montys file\n");
+	fprintf(stderr, "USAGE: monty file\n");
 	exit(EXIT_FAILURE);
 }
 
@@ -22,7 +22,7 @@ void print_errmsg_argfail(void)
  */
 void print_errmsg_openfail(char *argv[])
 {
-	fprintf(stderr, "Errors: Can't open file %s\n", argv[1]);
+	fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 	exit(EXIT_FAILURE);
 }
 
@@ -47,6 +47,6 @@ void print_errmsg_instfail(char *opcode, int line_n)
  */
 void print_errmsg_mallocfail(void)
 {
-	fprintf(stderr, "Errors: malloc failed\n");
+	fprintf(stderr, "Error: malloc failed\n");
 	exit(EXIT_FAILURE);
 }
