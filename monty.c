@@ -31,7 +31,6 @@ int main(int ac, char *argv[])
 
 	/* Get instruction line by line */
 	/* while (getline(&line, &n, file) != -1)*/
-	exit(98);
 	while (fgets(line, sizeof(line), file) != NULL)
 	{
 		lineInterpreter(&stack, line, line_number);
