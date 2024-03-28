@@ -1,6 +1,6 @@
 #ifndef MONTY_H
 #define MONTY_H
-
+#define _GNU_SOURCE
 
 /* Include header files */
 #include <stdio.h>
@@ -74,6 +74,7 @@ void print_errmsg_opcodefail(stack_t **stack, int line_number, char *opcode);
 char *get_opcode(char *inst_line);
 
 /* Push to Stack */
+/*stack_t *create_block(stack_t **block, int val);*/
 void push(stack_t **stack, int val);
 void push_to_stack(stack_t **stack, int val);
 

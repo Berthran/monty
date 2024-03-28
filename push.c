@@ -5,15 +5,14 @@
 /**
  * push - adds a value to the top of the stack
  * @stack: the stack data structure to push to
- * @val: tha value to push to the stack
+ * @line_number: the line number of the instruction in the MBCF
  *
  * Return: nothing
  */
 
-void push(stack_t **stack, int val)
+void push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new_block = NULL;
-	(void)new_block, (void)stack, (void)val;
 
 	if (stack != NULL)
 	{
