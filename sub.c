@@ -29,7 +29,7 @@ void sub(stack_t **stack, unsigned int line_number)
 	}
 	if (top2 == NULL || *stack == NULL)
 	{
-		fprintf(stderr, "L%d: can't subs, stack too short\n", line_number);
+		fprintf(stderr, "L%d: can't sub, stack too short\n", line_number);
 		free_stack_t(stack);
 		fclose(file);
 		exit(EXIT_FAILURE);
