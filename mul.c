@@ -26,7 +26,6 @@ void mul(stack_t **stack, unsigned int line_number)
 		n2 = top2->n;
 		top2->n = n2 * n1;
 		pop(stack, line_number);
-		printf("fail\n");
 	}
 	if (top2 == NULL || *stack == NULL)
 	{
