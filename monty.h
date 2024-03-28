@@ -51,6 +51,7 @@ typedef struct instruction_s
 
 /* Global declaration of file pointer */
 extern FILE *file;
+extern char *line;
 
 /* Interprete the instruction line */
 int lineInterpreter(stack_t **stack, char *line, int line_number);
