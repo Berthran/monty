@@ -33,6 +33,5 @@ void push(stack_t **stack, int val)
 		}
 		/* Move stack to the top */
 		*stack = new_block;
-		printf("fail push\n");
 	}
 }
