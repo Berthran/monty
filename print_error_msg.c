@@ -22,7 +22,7 @@ void print_errmsg_argfail(void)
  */
 void print_errmsg_openfail(char *argv[])
 {
-	fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
+	fprintf(stderr, "Error: Can't open files %s\n", argv[1]);
 	exit(EXIT_FAILURE);
 }
 
