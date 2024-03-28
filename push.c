@@ -22,7 +22,6 @@ void push(stack_t **stack, int val)
 		if (new_block == NULL)
 			print_errmsg_mallocfail();
 		/* Assign values to the members of the new block */
-		exit(98);
 		new_block->n = val;
 		new_block->prev = NULL;
 		new_block->next = NULL;
