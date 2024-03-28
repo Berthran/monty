@@ -14,7 +14,7 @@ FILE *file;
 int main(int ac, char *argv[])
 {
 
-	char line[INT_MAX];
+	char line[4000];
 	/* char *line = NULL; */
 	/* size_t n = 0; */
 	int line_number = 1;
