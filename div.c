@@ -22,7 +22,7 @@ void _div(stack_t **stack, unsigned int line_number)
 	}
 	if (top2 == NULL || *stack == NULL)
 	{
-		fprintf(stderr, "L%d: can't div, stack too short\n", line_number);
+		fprintf(stderr, "L%d: can't divs, stack too short\n", line_number);
 		free_stack_t(stack);
 		fclose(file);
 		exit(EXIT_FAILURE);
@@ -33,7 +33,7 @@ void _div(stack_t **stack, unsigned int line_number)
 		n2 = top2->n;
 		if (n1 == 0)
 		{
-			fprintf(stderr, "L%d: division by zero\n", line_number);
+			fprintf(stderr, "L%d: divisions by zero\n", line_number);
 			free_stack_t(stack);
 			fclose(file);
 			exit(EXIT_FAILURE);
@@ -44,5 +44,4 @@ void _div(stack_t **stack, unsigned int line_number)
 			pop(stack, line_number);
 		}
 	}
-	printf("div fails\n");
 }
