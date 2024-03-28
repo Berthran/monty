@@ -15,8 +15,6 @@ int main(int ac, char *argv[])
 {
 
 	char line[4000];
-	/* char *line = NULL; */
-	/* size_t n = 0; */
 	int line_number = 1;
 	stack_t *stack = NULL;
 
@@ -30,7 +28,6 @@ int main(int ac, char *argv[])
 		print_errmsg_openfail(argv);
 
 	/* Get instruction line by line */
-	/* while (getline(&line, &n, file) != -1)*/
 	while (fgets(line, sizeof(line), file) != NULL)
 	{
 		lineInterpreter(&stack, line, line_number);
@@ -38,6 +35,5 @@ int main(int ac, char *argv[])
 	}
 	fclose(file);
 	free_stack_t(&stack);
-	/* free(line); */
 	exit(EXIT_SUCCESS);
 }
