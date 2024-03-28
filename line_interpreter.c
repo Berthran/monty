@@ -17,7 +17,10 @@ int lineInterpreter(stack_t **stack, char *line, int line_number)
 	char *opcode, *val = NULL;
 
 	if (is_empty(line) != 0)
+	{
+		printf("empty\n");
 		return (0);
+	}
 
 	opcode = get_opcode(line);
 
