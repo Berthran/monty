@@ -16,8 +16,8 @@ int lineInterpreter(stack_t **stack, char *line, int line_number)
 {
 	char *opcode, *val = NULL;
 
-	if (is_empty(line) != 0)
-		return (0);
+	/*if (is_empty(line) != 0)
+		return (0);*/
 
 	opcode = get_opcode(line);
 
