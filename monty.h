@@ -105,6 +105,9 @@ void mul(stack_t **stack, unsigned int line_number);
 /* Find the modulus of the two top elements of the stack */
 void mod(stack_t **stack, unsigned int line_number);
 
+/* Print the ASCII value of top of the stack */
+void pchar(stack_t **stack, unsigned int line_number);
+
 /* Clean up stack */
 void free_stack_t(stack_t **stack);
 #endif
