@@ -13,7 +13,9 @@
 void push(stack_t **stack, int val)
 {
 	stack_t *new_block = NULL;
+	(void)new_block, (void)stack, (void)val;
 
+	exit(98);
 	if (stack != NULL)
 	{
 		/* Create a new block of memory */
