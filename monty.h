@@ -62,6 +62,11 @@ int is_newline(char *inst_line);
 int is_spaces(char *inst_line);
 int is_empty(char *inst_line);
 
+/* Handle nop opcode and comment */
+int is_nop(char *inst_line);
+int is_comment(char *inst_line);
+int is_nocommand(char *inst_line);
+
 /* Functions to handle printing error messages */
 void print_errmsg_argfail(void);
 void print_errmsg_openfail(char *argv[]);
@@ -76,9 +81,7 @@ void print_errmsg_opcodefail(stack_t **stack, int line_number, char *opcode);
 char *get_opcode(char *inst_line);
 
 /* Push to Stack */
-/*stack_t *create_block(stack_t **block, int val);*/
-void push(stack_t **stack, int val);
-void push_to_stack(stack_t **stack, int val);
+void push(stack_t **stack, unsigned int line_number);
 
 /* Print the Stack */
 void pall(stack_t **stack, unsigned int line_number);
@@ -119,6 +122,12 @@ void rotl(stack_t **stack, unsigned int line_number);
 
 /* Rotate the bottom element of the stack to the top */
 void rotr(stack_t **stack, unsigned int line_number);
+
+/* Add element to a queue */
+void enqueue(stack_t **stack, int val);
+
+/* Remove elements from a queue */
+void dequeue(stack_t **stack, unsigned int line_number);
 
 /* Clean up stack */
 void free_stack_t(stack_t **stack);
