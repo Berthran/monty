@@ -24,7 +24,6 @@ void (*get_func(char *opcode))(stack_t **, unsigned int)
 		{"pchar", pchar},
 		{"pstr", pstr},
 		{"rotl", rotl},
-		{"pback", pall_back},
 		{NULL, NULL}};
 	size_t opcode_len, i = 0;
 	char *valid_opcode = op_func[i].opcode;
