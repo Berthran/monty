@@ -24,7 +24,8 @@ void add(stack_t **stack, unsigned int line_number)
 	{
 		n1 = top1->n;
 		n2 = top2->n;
-		push(stack, n1 + n2);
+		top2->n = n1 + n2;
+		pop(stack, line_number);
 	}
 	if (top2 == NULL || *stack == NULL)
 	{
