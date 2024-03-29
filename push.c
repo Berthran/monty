@@ -19,7 +19,7 @@ void push(stack_t **stack, unsigned int line_number)
 	{
 		/* Attempt to get the value */
 		val = strtok(NULL, " ");
-		if (val == NULL || (atoi(val) == 0 && *val != '0'))
+		if (val == NULL || (atoi(val) == 0 && (*val != '0' && *val != '-')))
 			print_errmsg_pushfail(stack, line_number);
 
 		/* If value was gotten, create a new block of memory */
