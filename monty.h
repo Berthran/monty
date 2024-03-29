@@ -82,6 +82,7 @@ char *get_opcode(char *inst_line);
 
 /* Push to Stack */
 void push(stack_t **stack, unsigned int line_number);
+int stoi(char *str);
 
 /* Print the Stack */
 void pall(stack_t **stack, unsigned int line_number);
