@@ -27,13 +27,11 @@ void (*get_func(char *opcode))(stack_t **, unsigned int)
 		{"rotl", rotl},
 		{"rotr", rotr},
 		{NULL, NULL}};
-	size_t opcode_len, i = 0;
+	size_t i = 0;
 	char *valid_opcode = op_func[i].opcode;
 
 	do {
-		opcode_len = strlen(valid_opcode);
-
-		if (strncmp(valid_opcode, opcode, opcode_len) == 0)
+		if (strcmp(valid_opcode, opcode) == 0)
 			return (op_func[i].f);
 		++i;
 		valid_opcode = op_func[i].opcode;
