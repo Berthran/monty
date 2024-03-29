@@ -25,5 +25,10 @@ void pchar(stack_t **stack, unsigned int line_number)
 	if (val >= 0 && val <= 127)
 		printf("%c\n", val);
 	else
+	{
 		fprintf(stderr, "L%d: can't pchar, value out of range\n", line_number);
+		free_stack_t(stack);
+		fclose(file);
+		exit(EXIT_FAILURE);
+	}
 }
