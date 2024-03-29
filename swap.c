@@ -12,7 +12,7 @@
 
 void swap(stack_t **stack, unsigned int line_number)
 {
-	stack_t *top1, *top2;
+	stack_t *top1 = NULL, *top2 = NULL;
 	int temp_n;
 
 	if (*stack != NULL)
