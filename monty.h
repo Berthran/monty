@@ -117,6 +117,9 @@ void pstr(stack_t **stack, unsigned int line_number);
 /* Rotate the top element of the stack to the bottom */
 void rotl(stack_t **stack, unsigned int line_number);
 
+/* Rotate the bottom element of the stack to the top */
+void rotr(stack_t **stack, unsigned int line_number);
+
 /* Clean up stack */
 void free_stack_t(stack_t **stack);
 #endif
