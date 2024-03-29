@@ -82,6 +82,7 @@ void push_to_stack(stack_t **stack, int val);
 
 /* Print the Stack */
 void pall(stack_t **stack, unsigned int line_number);
+void pall_back(stack_t **stack, unsigned int line_number);
 
 /* Print the top of the stack */
 void pint(stack_t **stack, unsigned int line_number);
@@ -112,6 +113,9 @@ void pchar(stack_t **stack, unsigned int line_number);
 
 /* Print the ASCII value of each value of the stack until 0 or end of stack */
 void pstr(stack_t **stack, unsigned int line_number);
+
+/* Rotate the top element of the stack to the bottom */
+void rotl(stack_t **stack, unsigned int line_number);
 
 /* Clean up stack */
 void free_stack_t(stack_t **stack);
