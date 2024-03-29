@@ -15,6 +15,7 @@
 int lineInterpreter(stack_t **stack, char *line, int line_number)
 {
 	char *opcode, *val = NULL;
+	(void)val;
 
 	if (is_empty(line) != 0)
 		return (0);
@@ -29,25 +30,10 @@ int lineInterpreter(stack_t **stack, char *line, int line_number)
 	if (strncmp(opcode, "#", 1) == 0)
 		return (0);
 
-	/* Handle the push opcode */
-	if (strcmp(opcode, "push") == 0)
-	{
-		val = strtok(NULL, " ");
-		if (val == NULL || (atoi(val) == 0 && *val != '0'))
-			print_errmsg_pushfail(stack, line_number);
-		else
-			push(stack, atoi(val));
-	}
-
-	/* Handle other opcodes */
+	/* Validate the opcode and call function handler */
+	if (get_func(opcode) == NULL)
+		print_errmsg_opcodefail(stack, line_number, opcode);
 	else
-	{
-		if (get_func(opcode) == NULL)
-			print_errmsg_opcodefail(stack, line_number, opcode);
-		else
-			get_func(opcode)(stack, line_number);
-	}
-	/* printf("L%d: %s successful", line_number, opcode); */
-	/* printf("\n"); */
+		get_func(opcode)(stack, line_number);
 	return (0);
 }
