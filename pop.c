@@ -24,6 +24,7 @@ void pop(stack_t **stack, unsigned int line_number)
 
 	temp = *stack;
 	*stack = temp->next;
+	/* If the stack is not having only 1 element */
 	if (*stack != NULL)
 		(*stack)->prev = NULL;
 	free(temp);
