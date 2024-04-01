@@ -51,7 +51,8 @@ typedef struct instruction_s
 
 /* Global declaration of file pointer */
 extern FILE *file;
-/* extern char *line; */
+/* Global declaration of data structure type */
+extern int FIFO;
 
 /* Interprete the instruction line */
 int lineInterpreter(stack_t **stack, char *line, int line_number);
@@ -80,9 +81,14 @@ void print_errmsg_opcodefail(stack_t **stack, int line_number, char *opcode);
 /* Handle instruction line with arguments */
 char *get_opcode(char *inst_line);
 
-/* Push to Stack */
+/* Fuction prototype for adding elements to the DLL structure */
 void push(stack_t **stack, unsigned int line_number);
+/* Custom str to int converter */
 int stoi(char *str);
+/* Sub-function to handle push operations */ 
+void push_to_stack(stack_t **new_block, stack_t **stack);
+/* Sub-fucntion to handle enqueue operations */
+void enqueue(stack_t **new_block, stack_t **stack);
 
 /* Print the Stack */
 void pall(stack_t **stack, unsigned int line_number);
@@ -124,11 +130,10 @@ void rotl(stack_t **stack, unsigned int line_number);
 /* Rotate the bottom element of the stack to the top */
 void rotr(stack_t **stack, unsigned int line_number);
 
-/* Add element to a queue */
-void enqueue(stack_t **stack, int val);
 
-/* Remove elements from a queue */
-void dequeue(stack_t **stack, unsigned int line_number);
+/* For stack data structure */
+void set_stack(stack_t **stack, unsigned int line_number);
+void set_queue(stack_t **stack, unsigned int line_number);
 
 /* Clean up stack */
 void free_stack_t(stack_t **stack);

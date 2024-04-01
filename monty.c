@@ -3,6 +3,7 @@
 #include "monty.h"
 
 FILE *file;
+int FIFO = 0;
 
 /**
  * main - the entry point to the interpreter

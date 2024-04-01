@@ -26,6 +26,8 @@ void (*get_func(char *opcode))(stack_t **, unsigned int)
 		{"pstr", pstr},
 		{"rotl", rotl},
 		{"rotr", rotr},
+		{"stack", set_stack},
+		{"queue", set_queue},
 		{NULL, NULL}};
 	size_t i = 0;
 	char *valid_opcode = op_func[i].opcode;

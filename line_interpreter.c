@@ -14,8 +14,7 @@
 
 int lineInterpreter(stack_t **stack, char *line, int line_number)
 {
-	char *opcode, *val = NULL;
-	(void)val;
+	char *opcode;
 
 	if (is_empty(line) != 0)
 		return (0);
